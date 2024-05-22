@@ -18,6 +18,11 @@ if (window.location.href == 'https://frzyc.github.io/genshin-optimizer/#/teams')
         width: auto;
         display: inline-block;
     }
+    .css-1wsz2xy {
+        width: auto;
+        margin: 15px;
+        display: inline-block;
+    }
 
 ` );
 
@@ -33,12 +38,12 @@ if (window.location.href == 'https://frzyc.github.io/genshin-optimizer/#/teams')
                     var characters = document.getElementsByClassName("MuiButtonBase-root MuiCardActionArea-root css-1rdvs08");
                     for (let i = 0; i < characters.length; i++) {
                         characters.item(i).children[0].children[2].remove();
-                    }
+                    }/*
                     var empty = document.getElementsByClassName("MuiButtonBase-root MuiCardActionArea-root css-1wsz2xy");
                     while(empty.length){
                         empty.item(0).remove();
                     }
-
+*/
 
 
                 } catch (error) {
