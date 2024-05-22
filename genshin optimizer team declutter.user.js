@@ -20,8 +20,15 @@ if (window.location.href == 'https://frzyc.github.io/genshin-optimizer/#/teams')
     }
     .css-1wsz2xy {
         width: auto;
-        margin: 15px;
         display: inline-block;
+        margin-top: unset;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .css-8xl60i{
+        margin-top: unset;
+        margin-left: 5px;
+        margin-bottom: 5px;
     }
 
 ` );
