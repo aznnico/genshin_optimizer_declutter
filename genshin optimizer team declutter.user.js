@@ -11,32 +11,33 @@
 // @license      GNU GPLv2
 // ==/UserScript==
 
-if (window.location.href == 'https://frzyc.github.io/genshin-optimizer/#/teams'){
+window.onload = function() {
+    var bodyList = document.querySelector("body");
+    var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            try{
+                if (window.location.href == 'https://frzyc.github.io/genshin-optimizer/#/teams'){
+                    GM_addStyle ( `
+                        .css-1rdvs08 {
+                            width: auto;
+                            display: inline-block;
+                        }
+                        .css-1wsz2xy {
+                            width: auto;
+                            display: inline-block;
+                            margin-top: unset;
+                            margin-left: 15px;
+                            margin-right: 15px;
+                        }
+                        .css-8xl60i{
+                            margin-top: unset;
+                            margin-left: 5px;
+                            margin-bottom: 5px;
+                        }
 
-    GM_addStyle ( `
-    .css-1rdvs08 {
-        width: auto;
-        display: inline-block;
-    }
-    .css-1wsz2xy {
-        width: auto;
-        display: inline-block;
-        margin-top: unset;
-        margin-left: 15px;
-        margin-right: 15px;
-    }
-    .css-8xl60i{
-        margin-top: unset;
-        margin-left: 5px;
-        margin-bottom: 5px;
-    }
+                    ` );
 
-` );
-    window.onload = function() {
-        var bodyList = document.querySelector("body");
-        var observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
-                try{
+
                     var dividers = document.getElementsByClassName("MuiDivider-root MuiDivider-fullWidth css-1px5dlw");
                     while (dividers.length) {
                         dividers.item(0).remove();
@@ -54,20 +55,25 @@ if (window.location.href == 'https://frzyc.github.io/genshin-optimizer/#/teams')
                     */
                     //document.querySelector("footer").remove();
 
+
+                    // NOTE:
+                    // comment out these two lines if you dont want to zoom out. default is pretty big.
                     document.getElementsByClassName('MuiBox-root css-1nneb23')[0].style.webkitTransform = 'scale(.8)';
                     document.getElementsByClassName('MuiBox-root css-1nneb23')[0].style.transformOrigin = 'top';
 
+                };
+            } catch (error) {
+                ;
+            }
 
-                } catch (error) {
-                    ;
-                }
-            });
+
         });
-        var config = {
-            childList: true,
-            subtree: true
-        };
-        observer.observe(bodyList, config);
+    });
+    var config = {
+        childList: true,
+        subtree: true
     };
+    observer.observe(bodyList, config);
+
 
 }
