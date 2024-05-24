@@ -61,7 +61,9 @@ window.onload = function() {
                     document.getElementsByClassName('MuiBox-root css-1nneb23')[0].style.webkitTransform = 'scale(.8)';
                     document.getElementsByClassName('MuiBox-root css-1nneb23')[0].style.transformOrigin = 'top';
 
-                };
+                } else {
+                    document.getElementsByClassName('MuiBox-root css-1nneb23')[0].style.webkitTransform = 'scale(1)';
+                }
             } catch (error) {
                 ;
             }
